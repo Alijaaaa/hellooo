@@ -1,7 +1,6 @@
 let clues = [
     { clue: "This treat is sweet, just like your effort on the exam! Think of something cold and delicious...", answer: "ice cream" },
     { clue: "You did amazing, and amazing people deserve treats! What is a place where you get ice cream?", answer: "dairy queen" },
-    { clue: "Final hint! Your reward is waiting at Dairy Queen! Type 'let's go' to claim your treat!", answer: "let's go" }
 ];
 
 let currentClueIndex = 0;
