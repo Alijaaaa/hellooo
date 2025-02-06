@@ -29,9 +29,9 @@ function checkAnswer() {
         } else {
             feedback.innerHTML = `
                 🎉 Congratulations! You found your surprise! <br><br>
-                <strong>📍 Let's go pick it up at Dairy Queen:</strong><br>
+                <strong>📍 Meet me at Dairy Queen:</strong><br>
                 Dairy Queen Restaurant, 6445 Eastridge Dr, Dallas, TX 75231 🍦<br><br>
-                💖 Sorry I couldn't make a better website, I've been busy... But I wanted to do something special for you since you just finished your exam! <br><br>
+                💖 Sorry I couldn't make a better website, I've been busy... But I wanted to do something special for you! <br><br>
                 I love you. 💕
             `;
             document.getElementById("answerInput").style.display = "none";
