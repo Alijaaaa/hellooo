@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt for Ice Cream 🍦</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <h1 id="title">Hey Advait! 💖</h1>
+        <p id="message">You crushed your exam! I am so so so proud of you. Ready for a little adventure? 🤔</p>
+        <p id="message">Also YOU DID AMAZING!!!! </p>
+        <div id="buttons">
+            <button onclick="startGame()">Yes! 🎉</button>
+            <button onclick="notExcited()">No... 😢</button>
+        </div>
+        <div id="gameArea" class="hidden">
+            <p id="clueText"></p>
+            <input type="text" id="answerInput" placeholder="Type your answer...">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="feedback"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
