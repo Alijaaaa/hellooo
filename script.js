@@ -40,3 +40,26 @@ function checkAnswer() {
         feedback.innerText = "Oops! Try again. 🤔";
     }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const lilyContainer = document.createElement("div");
+    lilyContainer.classList.add("lily-background");
+    document.body.appendChild(lilyContainer);
+
+    function createLily() {
+        const lily = document.createElement("img");
+        lily.src = "lily.png"; // Make sure to add a lily image in your project
+        lily.classList.add("lily");
+        lily.style.left = Math.random() * 100 + "vw";
+        lily.style.animationDuration = Math.random() * 5 + 5 + "s"; // Random speed
+        lilyContainer.appendChild(lily);
+
+        // Remove lily after animation completes
+        setTimeout(() => {
+            lily.remove();
+        }, 10000);
+    }
+
+    // Create lilies every second
+    setInterval(createLily, 1000);
+});
+
