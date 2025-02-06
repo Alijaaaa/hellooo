@@ -29,7 +29,7 @@ function checkAnswer() {
         } else {
             feedback.innerHTML = `
                 🎉 Congratulations! You found your surprise! <br><br>
-                <strong>📍 Meet me at Dairy Queen:</strong><br>
+                <strong>📍 Pick it up at Dairy Queen:</strong><br>
                 Dairy Queen Restaurant, 6445 Eastridge Dr, Dallas, TX 75231 🍦<br><br>
                 💖 Sorry I couldn't make a better website, I've been busy... But I wanted to do something special for you! <br><br>
                 I love you. 💕
