@@ -1,122 +1,87 @@
-/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:wght@500&family=Raleway:wght@300;500&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffebcc;
     text-align: center;
-    padding: 20px;
-    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    background-color: #ffe6f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url('https://i.pinimg.com/originals/9f/b1/48/9fb1484b857eef9dbb349cdfe1d38235.jpg'); 
+    background-size: cover;
+    background-position: center;
 }
 
-/* Container */
-#container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
-    position: relative;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-/* Dinosaur Animation */
-.dino-animation {
-    width: 150px;
-    animation: bounce 2s infinite alternate ease-in-out;
-}
-
-/* Floating Lilies Background */
-.lily-background {
-    position: fixed;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url('lily.jpg'); 
-    background-size: contain;
-    opacity: 0.3;
-    z-index: -1;
-    animation: float 10s infinite linear;
 }
 
-/* Lego Button Style */
-.lego-button {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #ffb6c1;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.title {
+    font-family: 'Parisienne', cursive;
+    font-size: 28px;
+    color: #d63384;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
     cursor: pointer;
-    margin: 5px;
-    font-weight: bold;
-    box-shadow: 2px 2px 0px #c79400;
-    transition: transform 0.2s ease-in-out;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
-.lego-button:hover {
+#yesButton {
+    background-color: #ff66b2;
+    color: white;
+    border: 2px solid #ff99cc;
+}
+
+#yesButton:hover {
+    background-color: #ff3385;
     transform: scale(1.1);
 }
 
-/* Hidden Elements */
-.hidden {
-    display: none;
-}
-
-/* Input Style */
-input {
-    padding: 10px;
-    border: 2px solid #ff66b2;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* Keyframe Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes bounce {
-    from { transform: translateY(0px); }
-    to { transform: translateY(-10px); }
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
-}
-/* Floating Lilies Background */
-.lily-background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-}
-
-/* Animated Lilies */
-.lily {
+#noButton {
+    background-color: #ffcccc;
+    color: #d63384;
     position: absolute;
-    width: 50px;
-    opacity: 0.8;
-    animation: floatUp linear infinite;
+    border: 2px solid #ffb6c1;
 }
 
-/* Lily Animation */
-@keyframes floatUp {
-    from {
-        transform: translateY(100vh);
-        opacity: 0.7;
-    }
-    to {
-        transform: translateY(-10vh);
-        opacity: 0;
-    }
+#noButton:hover {
+    background-color: #ff99aa;
 }
 
+/* Message style */
+#message {
+    font-size: 18px;
+    color: #d63384;
+    font-family: 'Playfair Display', serif;
+    margin-top: 15px;
+}
