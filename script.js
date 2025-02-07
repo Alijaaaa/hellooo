@@ -1,5 +1,5 @@
 document.getElementById("yesButton").addEventListener("click", function () {
-    document.getElementById("message").innerText = "Yay! I'm so happy ❤️💖💋";
+    document.getElementById("message").innerHTML = "Yay! You're mine now! 💋💕💍";
 });
 
 document.getElementById("noButton").addEventListener("mouseover", function () {
