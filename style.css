@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:wght@500&family=Raleway:wght@300;500&display=swap');
-
+/* Coquette & Romantic Aesthetic */
 body {
     text-align: center;
     font-family: 'Playfair Display', serif;
@@ -9,79 +8,77 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-image: url('https://i.pinimg.com/originals/9f/b1/48/9fb1484b857eef9dbb349cdfe1d38235.jpg'); 
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
 }
 
+/* Elegant Box for Text */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.card {
-    background: white;
+    background: rgba(255, 245, 247, 0.95);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border: 3px solid #ffb6c1;
-    text-align: center;
-    width: 80%;
+    border: 2px solid #ff6699;
     max-width: 400px;
     position: relative;
+    z-index: 2;
 }
 
-.title {
-    font-family: 'Parisienne', cursive;
-    font-size: 28px;
+/* Glowing Effect for "Happy Rose Day" */
+.glowing-text {
+    font-size: 36px;
+    font-family: 'Great Vibes', cursive;
     color: #d63384;
+    text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff3399;
+    animation: glow 1.5s infinite alternate;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+/* Beautiful Message */
+.message {
+    font-size: 20px;
+    color: #ff3385;
 }
 
+/* Button Styling */
 button {
     padding: 12px 24px;
     font-size: 18px;
-    font-family: 'Raleway', sans-serif;
-    cursor: pointer;
     border-radius: 30px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease-in-out;
-}
-
-#yesButton {
-    background-color: #ff66b2;
-    color: white;
     border: 2px solid #ff99cc;
-}
-
-#yesButton:hover {
-    background-color: #ff3385;
-    transform: scale(1.1);
-}
-
-#noButton {
-    background-color: #ffcccc;
-    color: #d63384;
-    position: absolute;
-    border: 2px solid #ffb6c1;
-}
-
-#noButton:hover {
-    background-color: #ff99aa;
-}
-
-/* Message style */
-#message {
-    font-size: 18px;
-    color: #d63384;
+    background-color: #ff66a3;
+    color: white;
     font-family: 'Playfair Display', serif;
-    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+/* Glowing Animation */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff3399; }
+    100% { text-shadow: 0 0 15px #ff3399, 0 0 25px #ff1a75; }
+}
+
+/* Rose Animation */
+.rose {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    animation: floatUp 5s linear infinite;
+}
+
+/* Floating Rose Animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
 }
