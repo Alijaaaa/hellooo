@@ -1,25 +1,25 @@
-function generateRoses() {
-    const roseContainer = document.querySelector(".rose-container");
-
-    for (let i = 0; i < 10; i++) { // Creates 10 roses at a time
-        let rose = document.createElement("div");
-        rose.innerHTML = "🌹";
-        rose.classList.add("rose");
-
-        // Random positioning
-        rose.style.left = Math.random() * window.innerWidth + "px";
-        rose.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Random float time
-
-        roseContainer.appendChild(rose);
-
-        // Remove rose after animation
-        setTimeout(() => {
-            rose.remove();
-        }, 5000);
+document.getElementById("roseButton").addEventListener("click", function () {
+    for (let i = 0; i < 15; i++) { // Number of roses
+        createFloatingRose();
     }
-}
+});
 
-// Auto-generate roses on load
-window.onload = () => {
-    generateRoses();
-};
+function createFloatingRose() {
+    const rose = document.createElement("div");
+    rose.innerHTML = "🌹";
+    rose.classList.add("rose");
+
+    // Random position on screen
+    let randomX = Math.random() * window.innerWidth;
+    let randomDelay = Math.random() * 2;
+
+    rose.style.left = `${randomX}px`;
+    rose.style.animationDelay = `${randomDelay}s`;
+
+    document.body.appendChild(rose);
+
+    // Remove rose after animation ends
+    setTimeout(() => {
+        rose.remove();
+    }, 4000);
+}
