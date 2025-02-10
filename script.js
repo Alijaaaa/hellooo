@@ -1,10 +1,13 @@
 // Handle "Yes" Button Click
 document.getElementById("yesButton").addEventListener("click", function () {
-    // Play Sound Effect
     let audio = document.getElementById("boomSound");
-    audio.play();
 
-    // Generate Multiple Floating GIFs
+    // Try to play sound and handle autoplay issues
+    audio.play().catch(error => {
+        console.log("Autoplay prevented. User must interact first:", error);
+    });
+
+    // Generate multiple floating GIFs
     for (let i = 0; i < 10; i++) {
         createFloatingGif();
     }
@@ -16,11 +19,13 @@ function createFloatingGif() {
     gif.classList.add("floating-gif");
 
     // Random position on screen
-    let randomX = Math.random() * window.innerWidth;
-    let randomDelay = Math.random() * 2;
+    let randomX = Math.random() * (window.innerWidth - 150); // Keep GIF on screen
+    let randomY = window.innerHeight - 100; // Start near bottom of the screen
 
+    gif.style.position = "absolute";
     gif.style.left = `${randomX}px`;
-    gif.style.animationDelay = `${randomDelay}s`;
+    gif.style.bottom = "0px"; // Start from bottom
+    gif.style.animationDelay = `${Math.random() * 2}s`;
 
     document.body.appendChild(gif);
 
