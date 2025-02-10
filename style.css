@@ -10,6 +10,26 @@ body {
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Screen Shake Effect */
+.shake {
+    animation: shake 0.5s ease-in-out 4;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-5px, 5px); }
+    20% { transform: translate(5px, -5px); }
+    30% { transform: translate(-5px, 5px); }
+    40% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    60% { transform: translate(5px, -5px); }
+    70% { transform: translate(-5px, 5px); }
+    80% { transform: translate(5px, -5px); }
+    90% { transform: translate(-5px, 5px); }
+    100% { transform: translate(0, 0); }
 }
 
 /* Question Container */
@@ -20,6 +40,7 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border: 3px solid #ff4d6d;
     max-width: 400px;
+    text-align: center;
 }
 
 /* Text Styles */
@@ -32,17 +53,20 @@ h1 {
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 30px;
     margin-top: 20px;
+    position: relative;
 }
 
+/* Fix Button Size */
 button {
-    padding: 12px 20px;
+    padding: 12px 30px;
     font-size: 20px;
     border-radius: 30px;
     border: none;
     cursor: pointer;
     transition: 0.3s ease;
+    position: relative;
 }
 
 /* Yes Button */
