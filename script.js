@@ -1,10 +1,13 @@
 // Handle "Yes" Button Click
 document.getElementById("yesButton").addEventListener("click", function () {
-    let audio = document.getElementById("boomSound");
+    // Create a new Audio object to FORCE sound to play
+    let audio = new Audio("lebron-bo-bo-bo-boom-made-with-Voicemod.mp3");
 
-    // Play sound instantly
-    audio.play().catch(error => {
-        console.log("Autoplay blocked. User must interact first:", error);
+    // Play sound and catch autoplay errors
+    audio.play().then(() => {
+        console.log("Sound played successfully!");
+    }).catch(error => {
+        console.log("Autoplay blocked. Click required:", error);
     });
 
     // Shake the screen
@@ -21,6 +24,7 @@ document.getElementById("yesButton").addEventListener("click", function () {
     }
 });
 
+// Function to Create Floating GIFs from Yes Button
 function createFloatingGif() {
     const yesButton = document.getElementById("yesButton");
     const rect = yesButton.getBoundingClientRect();
