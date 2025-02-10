@@ -48,7 +48,7 @@ document.getElementById("noButton").addEventListener("mouseover", function () {
     let x = Math.random() * (window.innerWidth - 150);
     let y = Math.random() * (window.innerHeight - 150);
 
-    // Keep moving it away from Yes button
+    // Ensure it stays visible and far from "Yes" button
     let yesButton = document.getElementById("yesButton").getBoundingClientRect();
     let noButton = this.getBoundingClientRect();
 
@@ -64,4 +64,7 @@ document.getElementById("noButton").addEventListener("mouseover", function () {
     this.style.position = "absolute";
     this.style.left = `${x}px`;
     this.style.top = `${y}px`;
+
+    // Make sure it never goes off screen
+    this.style.visibility = "visible";
 });
