@@ -2,7 +2,7 @@
 document.getElementById("yesButton").addEventListener("click", function () {
     let audio = document.getElementById("boomSound");
 
-    // Play sound and fix autoplay issues
+    // Play sound instantly
     audio.play().catch(error => {
         console.log("Autoplay blocked. User must interact first:", error);
     });
@@ -26,13 +26,13 @@ function createFloatingGif() {
     const rect = yesButton.getBoundingClientRect();
 
     const gif = document.createElement("img");
-    gif.src = "lebron-james.gif"; // Ensure this file is in the same folder
+    gif.src = "lebron-james.gif";
     gif.classList.add("floating-gif");
 
-    // Position GIF at the Yes Button's location
-    gif.style.position = "absolute";
+    // Spawn GIF from Yes Button position
     gif.style.left = `${rect.left + rect.width / 2}px`;
     gif.style.top = `${rect.top}px`;
+    gif.style.position = "absolute";
     gif.style.animationDelay = `${Math.random() * 2}s`;
 
     document.body.appendChild(gif);
@@ -48,13 +48,12 @@ document.getElementById("noButton").addEventListener("mouseover", function () {
     let x = Math.random() * (window.innerWidth - 150);
     let y = Math.random() * (window.innerHeight - 150);
 
-    // Ensure it stays visible and far from "Yes" button
+    // Keep moving it far from "Yes" button
     let yesButton = document.getElementById("yesButton").getBoundingClientRect();
-    let noButton = this.getBoundingClientRect();
 
     while (
-        Math.abs(x - yesButton.left) < 150 &&
-        Math.abs(y - yesButton.top) < 150
+        Math.abs(x - yesButton.left) < 200 &&
+        Math.abs(y - yesButton.top) < 200
     ) {
         x = Math.random() * (window.innerWidth - 150);
         y = Math.random() * (window.innerHeight - 150);
@@ -65,6 +64,6 @@ document.getElementById("noButton").addEventListener("mouseover", function () {
     this.style.left = `${x}px`;
     this.style.top = `${y}px`;
 
-    // Make sure it never goes off screen
+    // Ensure it's always visible
     this.style.visibility = "visible";
 });
