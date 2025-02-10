@@ -1,13 +1,34 @@
 // Handle "Yes" Button Click
 document.getElementById("yesButton").addEventListener("click", function () {
-    document.getElementById("message").innerHTML = "🔥 BOOM BOOM BOOM BOOM 🔥";
-    document.body.classList.add("shake");
+    // Play Sound Effect
+    let audio = document.getElementById("boomSound");
+    audio.play();
 
-    // Remove shake effect after animation
-    setTimeout(() => {
-        document.body.classList.remove("shake");
-    }, 2000);
+    // Generate Multiple Floating GIFs
+    for (let i = 0; i < 10; i++) {
+        createFloatingGif();
+    }
 });
+
+function createFloatingGif() {
+    const gif = document.createElement("img");
+    gif.src = "lebron-james.gif"; // Ensure this file is in the same folder
+    gif.classList.add("floating-gif");
+
+    // Random position on screen
+    let randomX = Math.random() * window.innerWidth;
+    let randomDelay = Math.random() * 2;
+
+    gif.style.left = `${randomX}px`;
+    gif.style.animationDelay = `${randomDelay}s`;
+
+    document.body.appendChild(gif);
+
+    // Remove GIF after animation ends
+    setTimeout(() => {
+        gif.remove();
+    }, 4000);
+}
 
 // Make "No" Button Run Away
 document.getElementById("noButton").addEventListener("mouseover", function () {
