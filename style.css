@@ -1,8 +1,8 @@
-/* 🔥 Sexy Page Styles */
+/* 🌟 Aesthetic Background */
 body {
     text-align: center;
     font-family: 'Arial', sans-serif;
-    background-color: #ffcccc;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,10 +10,79 @@ body {
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    transition: transform 0.1s ease-in-out;
 }
 
-/* Screen Shake Effect */
+/* 🖥️ Centering Everything */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid #ff4d6d;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* 💖 Question Text */
+h1 {
+    font-size: 28px;
+    color: #ff005d;
+    margin-bottom: 20px;
+}
+
+/* ✨ Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 20px;
+}
+
+/* ✅ Button Styling */
+button {
+    padding: 12px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Yes Button */
+#yesButton {
+    background-color: #ff69b4;
+    color: white;
+    border: 2px solid #ff005d;
+}
+
+#yesButton:hover {
+    background-color: #ff007f;
+}
+
+/* No Button (RUNS AWAY) */
+#noButton {
+    background-color: #ff6666;
+    color: white;
+    border: 2px solid #c20000;
+    position: absolute;
+}
+
+/* 🎥 Floating GIF Animation */
+.floating-gif {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    animation: floatUp 4s linear infinite;
+}
+
+/* 🚀 GIF Floating Up */
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(0) scale(0.8); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-100vh) scale(1.2); }
+}
+
+/* 📳 Shake Effect */
 .shake {
     animation: shake 0.5s ease-in-out 4;
 }
@@ -29,75 +98,4 @@ body {
     70% { transform: translate(-5px, 5px); }
     80% { transform: translate(5px, -5px); }
     90% { transform: translate(-5px, 5px); }
-}
-
-/* Question Container */
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border: 3px solid #ff4d6d;
-    max-width: 400px;
-    text-align: center;
-}
-
-/* Text Styles */
-h1 {
-    font-size: 28px;
-    color: #ff005d;
-}
-
-/* Buttons Container */
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 120px;  /* Extra Spacing */
-    margin-top: 20px;
-    position: relative;
-}
-
-/* Fix Button Size */
-button {
-    padding: 12px 30px;
-    font-size: 20px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease;
-    position: relative;
-}
-
-/* Yes Button */
-#yesButton {
-    background-color: #ff69b4;
-    color: white;
-    border: 2px solid #ff005d;
-}
-
-#yesButton:hover {
-    background-color: #ff007f;
-}
-
-/* No Button Runs Away */
-#noButton {
-    background-color: #ff6666;
-    color: white;
-    border: 2px solid #c20000;
-    position: absolute;
-}
-
-/* Floating GIF Animation */
-.floating-gif {
-    position: absolute;
-    width: 100px;
-    height: auto;
-    animation: floatUp 4s linear infinite;
-}
-
-/* GIF Floating Up */
-@keyframes floatUp {
-    0% { opacity: 0; transform: translateY(0) scale(0.8); }
-    50% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(-100vh) scale(1.2); }
 }
