@@ -43,10 +43,25 @@ function createFloatingGif() {
     }, 4000);
 }
 
-// Make "No" Button Run Away
+// Make "No" Button Run Away FOREVER
 document.getElementById("noButton").addEventListener("mouseover", function () {
-    let x = Math.random() * (window.innerWidth - 200);
-    let y = Math.random() * (window.innerHeight - 200);
+    let x = Math.random() * (window.innerWidth - 150);
+    let y = Math.random() * (window.innerHeight - 150);
+
+    // Keep moving it away from Yes button
+    let yesButton = document.getElementById("yesButton").getBoundingClientRect();
+    let noButton = this.getBoundingClientRect();
+
+    while (
+        Math.abs(x - yesButton.left) < 150 &&
+        Math.abs(y - yesButton.top) < 150
+    ) {
+        x = Math.random() * (window.innerWidth - 150);
+        y = Math.random() * (window.innerHeight - 150);
+    }
+
+    // Move the button
+    this.style.position = "absolute";
     this.style.left = `${x}px`;
     this.style.top = `${y}px`;
 });
