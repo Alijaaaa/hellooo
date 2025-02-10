@@ -53,7 +53,7 @@ h1 {
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 80px;  /* Added more spacing */
+    gap: 100px;  /* More spacing */
     margin-top: 20px;
     position: relative;
 }
