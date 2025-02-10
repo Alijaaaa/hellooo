@@ -1,70 +1,103 @@
-// Handle "Yes" Button Click
-document.getElementById("yesButton").addEventListener("click", function () {
-    let audio = document.getElementById("boomSound");
-
-    // Play sound and fix autoplay issues
-    audio.play().catch(error => {
-        console.log("Autoplay blocked. User must interact first:", error);
-    });
-
-    // Shake the screen
-    document.body.classList.add("shake");
-
-    // Remove shake effect after animation
-    setTimeout(() => {
-        document.body.classList.remove("shake");
-    }, 2000);
-
-    // Generate multiple floating GIFs from button position
-    for (let i = 0; i < 10; i++) {
-        createFloatingGif();
-    }
-});
-
-function createFloatingGif() {
-    const yesButton = document.getElementById("yesButton");
-    const rect = yesButton.getBoundingClientRect();
-
-    const gif = document.createElement("img");
-    gif.src = "lebron-james.gif"; // Ensure this file is in the same folder
-    gif.classList.add("floating-gif");
-
-    // Position GIF at the Yes Button's location
-    gif.style.position = "absolute";
-    gif.style.left = `${rect.left + rect.width / 2}px`;
-    gif.style.top = `${rect.top}px`;
-    gif.style.animationDelay = `${Math.random() * 2}s`;
-
-    document.body.appendChild(gif);
-
-    // Remove GIF after animation ends
-    setTimeout(() => {
-        gif.remove();
-    }, 4000);
+/* 🔥 Sexy Page Styles */
+body {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffcccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.1s ease-in-out;
 }
 
-// Make "No" Button Run Away FOREVER
-document.getElementById("noButton").addEventListener("mouseover", function () {
-    let x = Math.random() * (window.innerWidth - 150);
-    let y = Math.random() * (window.innerHeight - 150);
+/* Screen Shake Effect */
+.shake {
+    animation: shake 0.5s ease-in-out 4;
+}
 
-    // Ensure it stays visible and far from "Yes" button
-    let yesButton = document.getElementById("yesButton").getBoundingClientRect();
-    let noButton = this.getBoundingClientRect();
+@keyframes shake {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5px, 5px); }
+    20% { transform: translate(5px, -5px); }
+    30% { transform: translate(-5px, 5px); }
+    40% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    60% { transform: translate(5px, -5px); }
+    70% { transform: translate(-5px, 5px); }
+    80% { transform: translate(5px, -5px); }
+    90% { transform: translate(-5px, 5px); }
+}
 
-    while (
-        Math.abs(x - yesButton.left) < 150 &&
-        Math.abs(y - yesButton.top) < 150
-    ) {
-        x = Math.random() * (window.innerWidth - 150);
-        y = Math.random() * (window.innerHeight - 150);
-    }
+/* Question Container */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #ff4d6d;
+    max-width: 400px;
+    text-align: center;
+}
 
-    // Move the button
-    this.style.position = "absolute";
-    this.style.left = `${x}px`;
-    this.style.top = `${y}px`;
+/* Text Styles */
+h1 {
+    font-size: 28px;
+    color: #ff005d;
+}
 
-    // Make sure it never goes off screen
-    this.style.visibility = "visible";
-});
+/* Buttons Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 120px;  /* Extra Spacing */
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Fix Button Size */
+button {
+    padding: 12px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Yes Button */
+#yesButton {
+    background-color: #ff69b4;
+    color: white;
+    border: 2px solid #ff005d;
+}
+
+#yesButton:hover {
+    background-color: #ff007f;
+}
+
+/* No Button Runs Away */
+#noButton {
+    background-color: #ff6666;
+    color: white;
+    border: 2px solid #c20000;
+    position: absolute;
+}
+
+/* Floating GIF Animation */
+.floating-gif {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: floatUp 4s linear infinite;
+}
+
+/* GIF Floating Up */
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(0) scale(0.8); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-100vh) scale(1.2); }
+}
