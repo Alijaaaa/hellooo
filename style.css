@@ -36,84 +36,6 @@ p {
     color: #333;
 }
 
-/* ❤️ Love Button */
-button {
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 30px;
-    border: 2px solid #ff69b4;
-    background-color: #ff4d6d;
-    color: white;
-    font-family: 'Playfair Display', serif;
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-    background-color: #ff1493;
-}
-
-/* 💕 Floating Hearts */
-.floating-heart {
-    position: absolute;
-    font-size: 24px;
-    color: red;
-    animation: floatUp 4s linear infinite;
-}
-
-/* ❤️ Heart Floating Animation */
-@keyframes floatUp {
-    0% {
-        opacity: 0;
-        transform: translateY(0) scale(0.5);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-100vh) scale(1.2);
-    }
-}
-/* 💖 Soft Romantic Background */
-body {
-    text-align: center;
-    font-family: 'Playfair Display', cursive;
-    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-}
-
-/* 📦 Container */
-.container {
-    background: rgba(255, 245, 247, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ffb6c1;
-    max-width: 500px;
-}
-
-/* ✨ Glow Text Effect */
-.glow-text {
-    font-size: 32px;
-    font-family: 'Great Vibes', cursive;
-    color: #ff007f;
-    text-shadow: 0px 0px 10px #ff4d6d;
-}
-
-/* 📝 Text Styling */
-p {
-    font-size: 18px;
-    color: #333;
-}
-
 /* ❤️ Pookie Button */
 button {
     padding: 12px 24px;
@@ -154,4 +76,3 @@ button:hover {
         transform: translateY(-100vh) scale(1.5);
     }
 }
-
