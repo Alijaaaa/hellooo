@@ -1,73 +1,35 @@
-// Handle "Yes" Button Click
-document.getElementById("yesButton").addEventListener("click", function () {
-    // Create a new Audio object to FORCE sound to play
-    let audio = new Audio("lebron-bo-bo-bo-boom-made-with-Voicemod.mp3");
+// Handle "Love You" Button Click
+document.getElementById("loveButton").addEventListener("click", function () {
+    let audio = new Audio("valentine-music.mp3");
 
-    // Play sound and catch autoplay errors
-    audio.play().then(() => {
-        console.log("Sound played successfully!");
-    }).catch(error => {
+    // Play romantic sound
+    audio.play().catch(error => {
         console.log("Autoplay blocked. Click required:", error);
     });
 
-    // Shake the screen
-    document.body.classList.add("shake");
-
-    // Remove shake effect after animation
-    setTimeout(() => {
-        document.body.classList.remove("shake");
-    }, 2000);
-
-    // Generate multiple floating GIFs from button position
-    for (let i = 0; i < 10; i++) {
-        createFloatingGif();
+    // Generate multiple floating hearts
+    for (let i = 0; i < 15; i++) {
+        createFloatingHeart();
     }
 });
 
-// Function to Create Floating GIFs from Yes Button
-function createFloatingGif() {
-    const yesButton = document.getElementById("yesButton");
-    const rect = yesButton.getBoundingClientRect();
+// Function to Create Floating Hearts
+function createFloatingHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.classList.add("floating-heart");
 
-    const gif = document.createElement("img");
-    gif.src = "lebron-james.gif";
-    gif.classList.add("floating-gif");
+    // Random position on screen
+    let randomX = Math.random() * window.innerWidth;
+    let randomDelay = Math.random() * 2;
 
-    // Spawn GIF from Yes Button position
-    gif.style.left = `${rect.left + rect.width / 2}px`;
-    gif.style.top = `${rect.top}px`;
-    gif.style.position = "absolute";
-    gif.style.animationDelay = `${Math.random() * 2}s`;
+    heart.style.left = `${randomX}px`;
+    heart.style.animationDelay = `${randomDelay}s`;
 
-    document.body.appendChild(gif);
+    document.body.appendChild(heart);
 
-    // Remove GIF after animation ends
+    // Remove heart after animation ends
     setTimeout(() => {
-        gif.remove();
+        heart.remove();
     }, 4000);
 }
-
-// Make "No" Button Run Away FOREVER
-document.getElementById("noButton").addEventListener("mouseover", function () {
-    let x = Math.random() * (window.innerWidth - 150);
-    let y = Math.random() * (window.innerHeight - 150);
-
-    // Keep moving it far from "Yes" button
-    let yesButton = document.getElementById("yesButton").getBoundingClientRect();
-
-    while (
-        Math.abs(x - yesButton.left) < 200 &&
-        Math.abs(y - yesButton.top) < 200
-    ) {
-        x = Math.random() * (window.innerWidth - 150);
-        y = Math.random() * (window.innerHeight - 150);
-    }
-
-    // Move the button
-    this.style.position = "absolute";
-    this.style.left = `${x}px`;
-    this.style.top = `${y}px`;
-
-    // Ensure it's always visible
-    this.style.visibility = "visible";
-});
